@@ -1,0 +1,60 @@
+@import '~@angular/material/core/theming/prebuilt/indigo-pink.scss';
+@import '~font-awesome/css/font-awesome.css';
+
+body {
+  margin: 0;
+}
+
+md-toolbar {
+  padding: 4 !important;
+  min-height: 48px !important;
+  position: fixed;
+  z-index: 9999;
+}
+md-toolbar-row {
+  height: 48px !important;
+  min-height: 48px !important;
+}
+
+h1 {
+  font-size: 0.8em;
+}
+h2 {
+  font-size: 0.1em;
+}
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+md-input {
+  margin-top: 60px;
+  margin-left: 20px;
+  width: 90%;
+}
+
+.material-icons {
+  font-size: 12px !important;
+}
+
+.md-list-item {
+  height: 24px !important;
+}
+.md-list-text {
+  font-size: 14px !important;
+}
+
+md-card {
+  padding: 12px 16px !important;
+  margin: 0 4px 20px 4px;
+  img {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+md-card-content {
+}
+md-card-actions {
+  padding: 0;
+  margin-bottom: 0 !important;
+}

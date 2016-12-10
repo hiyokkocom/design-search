@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
+import 'hammerjs';
+import { ShareButtonsModule } from 'ng2-sharebuttons';
+
 
 import { AppComponent } from './app.component';
 
@@ -12,7 +16,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterialModule.forRoot(),
+    ShareButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
