@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
+import { ShareButtonsModule } from 'ng2-sharebuttons';
+
 
 import { AppComponent } from './app.component';
 
@@ -15,7 +17,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    ShareButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
