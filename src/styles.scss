@@ -20,41 +20,46 @@ h1 {
   font-size: 0.8em;
 }
 h2 {
-  font-size: 0.1em;
+  font-size: 0.4em;
 }
 .fill-remaining-space {
   flex: 1 1 auto;
 }
 
 md-input {
-  margin-top: 60px;
-  margin-left: 20px;
-  width: 90%;
+  margin-top: 60px 0;
+  width: 100%;
 }
 
 .material-icons {
-  font-size: 12px !important;
+  font-size: 1.0em !important;
 }
 
 .md-list-item {
   height: 24px !important;
 }
 .md-list-text {
-  font-size: 14px !important;
+  font-size: 1.0em !important;
+}
+
+masonry {
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 md-card {
-  padding: 12px 16px !important;
-  margin: 0 4px 20px 4px;
-  img {
-    margin-top: 0 !important;
-    margin-left: 0 !important;
-    width: 100% !important;
-  }
+  margin: 4px !important;
 }
-md-card-content {
-}
+
 md-card-actions {
   padding: 0;
   margin-bottom: 0 !important;
+}
+
+.tag-brick {
+  white-space: nowrap;
+}
+
+.brick {
 }

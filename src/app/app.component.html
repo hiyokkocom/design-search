@@ -9,12 +9,18 @@
 <md-input #tagInput placeholder="タグを探す"></md-input>
 <md-card>
   <md-card-content>
-    <button md-button><md-icon>label</md-icon>イラスト</button>
-    <button md-button><md-icon>label_outline</md-icon>写真</button>
-    <button md-button><md-icon>label_outline</md-icon>シンプル</button>
-    <button md-button><md-icon>label_outline</md-icon>ねこ</button>
-    <button md-button><md-icon>label_outline</md-icon>写真が2点</button>
-    <button md-button><md-icon>label_outline</md-icon>写真が3点</button>
+    <masonry
+      [useImagesLoaded]="true"
+      [options]="{
+        transitionDuration: '0.4s',
+        fitWidth: true,
+        resize: true
+      }"
+    >
+      <masonry-brick class="tag-brick" *ngFor="let tag of tags">
+        <button md-button><md-icon>{{tag.icon}}</md-icon>{{tag.title}}</button>
+      </masonry-brick>
+    </masonry>
   </md-card-content>
 </md-card>
 
@@ -24,69 +30,32 @@
   </md-card-content>
 </md-card>
 
-<md-card>
-  <img md-card-image src="http://nenga.aisatsujo.jp/images/items/N17C001b.jpg" />
-  <md-card-content>
-    <md-card-content>
-      <md-list>
-         <md-list-item>
-            <h4 md-line><md-icon>home</md-icon>挨拶状ドットコム年賀状</h4>
-         </md-list-item>
-         <md-list-item>
-            <h4 md-line><md-icon>print</md-icon>ネットで印刷</h4>
-         </md-list-item>
-      </md-list>
-    </md-card-content>
-  </md-card-content>
-  <md-card-actions align="center">
-    <button md-raised-button color="accent">サイトに詳細をみにいく</button>
-  </md-card-actions>
-</md-card>
-
-<md-card>
-  <img md-card-image src="http://nenga.aisatsujo.jp/images/items/N17C002b.jpg" />
-  <md-card-content>
-    <md-card-content>
-      <md-icon>home</md-icon>挨拶状ドットコム年賀状
-    </md-card-content>
-  </md-card-content>
-  <md-card-actions align="center">
-    <button md-raised-button color="accent">サイトに見に行く</button>
-  </md-card-actions>
-</md-card>
-
-<md-card>
-  <img md-card-image src="http://nenga.aisatsujo.jp/images/items/N17C003b.jpg" />
-  <md-card-content>
-    <md-card-content>
-      <md-icon>home</md-icon>挨拶状ドットコム年賀状
-    </md-card-content>
-  </md-card-content>
-  <md-card-actions align="center">
-    <button md-raised-button color="accent">サイトに詳細をみにいく</button>
-  </md-card-actions>
-</md-card>
-
-<md-card>
-  <img md-card-image src="http://nenga.aisatsujo.jp/images/items/N17C004b.jpg" />
-  <md-card-content>
-    <md-card-content>
-      <md-icon>home</md-icon>挨拶状ドットコム年賀状
-    </md-card-content>
-  </md-card-content>
-  <md-card-actions align="center">
-    <button md-raised-button color="accent">サイトに詳細をみにいく</button>
-  </md-card-actions>
-</md-card>
-
-<md-card>
-  <img md-card-image src="http://nenga.aisatsujo.jp/images/items/N17C005b.jpg" />
-  <md-card-content>
-    <md-card-content>
-      <md-icon>home</md-icon>挨拶状ドットコム年賀状
-    </md-card-content>
-  </md-card-content>
-  <md-card-actions align="center">
-    <button md-raised-button color="accent">サイトに詳細をみにいく</button>
-  </md-card-actions>
-</md-card>
+<masonry
+  [useImagesLoaded]="true"
+  [options]="{
+    transitionDuration: '0.8s',
+    fitWidth: true,
+    resize: true
+  }"
+>
+  <masonry-brick class="brick" *ngFor="let item of items">
+    <md-card>
+      <img md-card-image [src]="item" />
+      <md-card-content>
+        <md-card-content>
+          <md-list>
+             <md-list-item>
+                <h4 md-line><md-icon>home</md-icon>挨拶状ドットコム年賀状</h4>
+             </md-list-item>
+             <md-list-item>
+                <h4 md-line><md-icon>print</md-icon>ネットで印刷</h4>
+             </md-list-item>
+          </md-list>
+        </md-card-content>
+      </md-card-content>
+      <md-card-actions align="center">
+        <button md-raised-button color="accent">サイトに詳細をみにいく</button>
+      </md-card-actions>
+    </md-card>
+  </masonry-brick>
+</masonry>
