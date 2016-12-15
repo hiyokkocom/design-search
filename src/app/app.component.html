@@ -17,8 +17,8 @@
       resize: true
     }"
   >
-    <masonry-brick class="brick" *ngFor="let item of items">
-      <img [src]="item.media" />
+    <masonry-brick class="brick" *ngFor="let design of designs.Items">
+      <img [src]="design.media" />
     </masonry-brick>
   </masonry>
   <md-card-content>
@@ -62,9 +62,9 @@
     resize: true
   }"
 >
-  <masonry-brick class="brick" *ngFor="let item of items">
+  <masonry-brick class="brick" *ngFor="let design of designs.Items">
     <md-card style="left: 0;right: 0;margin: auto;">
-      <img md-card-image [src]="item.media" />
+      <img md-card-image [src]="design.media" />
       <md-card-content>
         <md-card-content>
           <md-list>
@@ -78,8 +78,8 @@
         </md-card-content>
       </md-card-content>
       <md-card-actions align="center">
-        <a data-pin-do="buttonPin" data-pin-tall="true" data-pin-round="true" data-pin-save="true" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fnenga.aisatsujo.jp%2Fitem%2Fdetail%3Fit%3DN17C001%26cm%3Dnenga%26gr%3Dn_genre%26tag%3Dn_craft%26item_tag_sid%3D140061&media={{item}}&description=%E3%82%AF%E3%83%A9%E3%83%95%E3%83%88-N17C001" target="_blank"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_32.png" /></a>
-        <a md-raised-button color="accent" [href]="item.url" target="_blank">サイトにアクセスする</a>
+        <a data-pin-do="buttonPin" data-pin-tall="true" data-pin-round="true" data-pin-save="true" href="https://www.pinterest.com/pin/create/button/?url={{design.url}}&media={{design.media}}&description=%E3%82%AF%E3%83%A9%E3%83%95%E3%83%88-N17C001" target="_blank"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_32.png" /></a>
+        <a md-raised-button color="accent" [href]="design.url" target="_blank">サイトにアクセスする</a>
       </md-card-actions>
     </md-card>
   </masonry-brick>
