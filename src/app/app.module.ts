@@ -8,6 +8,8 @@ import 'hammerjs';
 
 import { AppComponent } from './app.component';
 
+import { TagsService } from './services/tags.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +21,9 @@ import { AppComponent } from './app.component';
     MaterialModule.forRoot(),
     MasonryModule
   ],
-  providers: [],
+  providers: [
+    TagsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 {
-  Items: [
+  "Items": [
     {
       "uuid": "33957c4c-ca89-4a66-b38a-d2e6164a6cbe",
       "name": "クラフト",
@@ -41,7 +41,7 @@
       "name": "写真が3点",
       "description": "",
       "media": ""
-    },
+    }
   ],
   "Count": 7
 }

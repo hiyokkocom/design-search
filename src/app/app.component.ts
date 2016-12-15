@@ -1,6 +1,10 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { MdInput } from '@angular/material';
 
+import { Tags } from './classes/tags';
+
+import { TagsService } from './services/tags.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,19 +13,17 @@ import { MdInput } from '@angular/material';
 export class AppComponent {
   // @ViewChild('tagInput') tagInput: MdInput;
 
+  tags: Tags = new Tags();
+
+  constructor(private tagServ: TagsService) {
+    tagServ.fetch()
+    .subscribe((data: Tags) => {
+      this.tags = data;
+    });
+  }
   // ngAfterViewInit() {
   //   this.tagInput.focus();
   // }
-
-  tags = [
-    { icon: "label", title: "クラフト" },
-    { icon: "label_outline", title: "イラスト" },
-    { icon: "label_outline", title: "写真" },
-    { icon: "label_outline", title: "シンプル" },
-    { icon: "label_outline", title: "ねこ" },
-    { icon: "label_outline", title: "写真が2点" },
-    { icon: "label_outline", title: "写真が3点" }
-  ];
 
   items = [
     {

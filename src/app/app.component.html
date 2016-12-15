@@ -42,8 +42,8 @@
         resize: true
       }"
     >
-      <masonry-brick class="tag-brick" *ngFor="let tag of tags">
-        <button md-button><md-icon>{{tag.icon}}</md-icon>{{tag.title}}</button>
+      <masonry-brick class="tag-brick" *ngFor="let tag of tags.Items">
+        <button md-button><md-icon>label_outline</md-icon>{{tag.name}}</button>
       </masonry-brick>
     </masonry>
   </md-card-content>
