@@ -24,8 +24,8 @@
   <md-card-content>
     <md-card-title>年賀状デザイン検索</md-card-title>
     <md-card-subtitle>あなたのデザインがきっと見つかる</md-card-subtitle>
-    <p>xxサイトのxxxx以上の年賀デザインかららくらく検索</p>
-    <p>きっとあなたのお気に入りのデザインが見つかります<br />元旦のご挨拶には思いのこもったデザインで！</p>
+    <!-- <p>xxサイトのxxxx以上の年賀デザインかららくらく検索</p> -->
+    <p>きっとあなたのお気に入りのデザインが見つかります<br />元旦のご挨拶には想いがこもったデザインで！</p>
     <p>気になるタグを選ぶだけで年賀状のデザインを簡単に検索</p>
     <p>ご自宅で印刷、ネットで印刷、価格など<br />気になる条件で絞り込みができます</p>
   </md-card-content>
@@ -67,18 +67,27 @@
       <img md-card-image [src]="design.media" />
       <md-card-content>
         <md-card-content>
-          <md-list>
-             <md-list-item>
-                <h4 md-line><md-icon>home</md-icon>挨拶状ドットコム年賀状</h4>
-             </md-list-item>
-             <md-list-item>
-                <h4 md-line><md-icon>print</md-icon>ネットで印刷</h4>
-             </md-list-item>
+          <md-list
+            *ngIf="design.attributes != null">
+            <md-list-item *ngFor="let attribute of design.attributes">
+              <h4 md-line><md-icon>{{attribute.icon}}</md-icon>{{attribute.name}}</h4>
+            </md-list-item>
+          </md-list>
+
+          <md-list *ngFor="let site of getSitesByUuid(design.siteUuid) | async">
+            <md-list-item>
+              <h4 md-line><md-icon>home</md-icon>{{site.name}}</h4>
+            </md-list-item>
+            <md-list-item
+              *ngFor="let attribute of site.attributes">
+              <h4 md-line><md-icon>{{attribute.icon}}</md-icon>{{attribute.name}}</h4>
+            </md-list-item>
           </md-list>
         </md-card-content>
       </md-card-content>
+
       <md-card-actions align="center">
-        <a data-pin-do="buttonPin" data-pin-tall="true" data-pin-round="true" data-pin-save="true" href="https://www.pinterest.com/pin/create/button/?url={{design.url}}&media={{design.media}}&description=%E3%82%AF%E3%83%A9%E3%83%95%E3%83%88-N17C001" target="_blank"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_32.png" /></a>
+        <a data-pin-do="buttonPin" data-pin-tall="true" data-pin-round="true" data-pin-save="true" href="https://www.pinterest.com/pin/create/button/?url={{design.url}}&media={{design.media}}&description={{design.name}}" target="_blank"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_32.png" /></a>
         <a md-raised-button color="accent" [href]="design.url" target="_blank">サイトにアクセスする</a>
       </md-card-actions>
     </md-card>

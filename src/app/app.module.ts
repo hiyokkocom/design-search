@@ -5,9 +5,11 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { MasonryModule } from 'angular2-masonry';
 import 'hammerjs';
+import 'rxjs/add/observable/from';
 
 import { AppComponent } from './app.component';
 
+import { SitesService } from './services/sites.service';
 import { TagsService } from './services/tags.service';
 import { DesignsService } from './services/designs.service';
 
@@ -23,6 +25,7 @@ import { DesignsService } from './services/designs.service';
     MasonryModule
   ],
   providers: [
+    SitesService,
     TagsService,
     DesignsService
   ],
